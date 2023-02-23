@@ -1,0 +1,19 @@
+apiVersion : apps/v1
+kind: Deployment
+metadata:
+  name: "borak8s-a2de"
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: "borak8s-a2de"
+  template:
+    metadata:
+      labels:
+        app: "borak8s-a2de"
+    spec:
+      containers:
+        - name: "borak8s-a2de"
+          image: "boraconregg.azurecr.io/borak8s"
+          ports:
+          - containerPort: 8080
